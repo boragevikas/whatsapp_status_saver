@@ -19,7 +19,7 @@ class VideoView extends StatefulWidget {
 class _VideoViewState extends State<VideoView> {
   List<Widget> buttonsList = const [
     Icon(Icons.download),
-    Icon(Icons.delete),
+    // Icon(Icons.delete),
     Icon(Icons.share_rounded)
   ];
 
@@ -36,7 +36,7 @@ class _VideoViewState extends State<VideoView> {
         ),
         autoInitialize: true,
         autoPlay: true,
-        aspectRatio: 5 / 6,
+        aspectRatio: 5 / 8,
         looping: true,
         errorBuilder: ((context, errorMessage) {
           return Center(child: Text(errorMessage));
@@ -54,37 +54,41 @@ class _VideoViewState extends State<VideoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Chewie(
         controller: _chewieController!,
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 25),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        padding: const EdgeInsets.only(left: 25, bottom: 30),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: List.generate(buttonsList.length, (index) {
-              return FloatingActionButton(
-                  heroTag: "$index",
-                  onPressed: () {
-                    switch (index) {
-                      case 0:
-                        log("Download");
-                        ImageGallerySaver.saveFile(widget.videoPath!)
-                            .then((value) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Video Saved to gallery')));
-                        });
-                        break;
-                      case 1:
-                        log("Delete");
-                        break;
-                      case 2:
-                        log("Shear");
-                        FlutterNativeApi.shareImage(widget.videoPath!);
-                        break;
-                    }
-                  },
-                  child: buttonsList[index]);
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: FloatingActionButton(
+                    heroTag: "$index",
+                    onPressed: () {
+                      switch (index) {
+                        case 0:
+                          log("Download");
+                          ImageGallerySaver.saveFile(widget.videoPath!)
+                              .then((value) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Video Saved to gallery')));
+                          });
+                          break;
+                        // case 1:
+                        //   log("Delete");
+                        //   break;
+                        case 1:
+                          log("Shear");
+                          FlutterNativeApi.shareImage(widget.videoPath!);
+                          break;
+                      }
+                    },
+                    child: buttonsList[index]),
+              );
             })),
       ),
     );

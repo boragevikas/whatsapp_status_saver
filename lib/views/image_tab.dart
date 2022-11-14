@@ -25,8 +25,8 @@ class _ImageTabState extends State<ImageTab> {
                 child: GridView(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8),
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 2),
                   children:
                       List.generate(statusController.getImages.length, (index) {
                     final data = statusController.getImages[index];
@@ -40,11 +40,11 @@ class _ImageTabState extends State<ImageTab> {
                       }),
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.green,
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: FileImage(File(data.path))),
-                            borderRadius: BorderRadius.circular(10)),
+                          color: Colors.black,
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: FileImage(File(data.path))),
+                        ),
                       ),
                     );
                   }),

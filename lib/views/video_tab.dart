@@ -25,8 +25,8 @@ class _VideoTabState extends State<VideoTab> {
                 child: GridView(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 8,
-                      mainAxisSpacing: 8),
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 2),
                   children:
                       List.generate(statusController.getVideos.length, (index) {
                     final data = statusController.getVideos[index];
@@ -44,13 +44,12 @@ class _VideoTabState extends State<VideoTab> {
                                   }),
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: FileImage(
-                                                File(Snapshot.data!))),
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
+                                      color: Colors.black,
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image:
+                                              FileImage(File(Snapshot.data!))),
+                                    ),
                                   ),
                                 )
                               : const Center(
