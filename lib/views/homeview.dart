@@ -19,6 +19,15 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final StatusController statusController = Get.find();
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Get.put(StatusController());
+    statusController.getStatus(".jpg");
+    statusController.getStatus(".mp4");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,

@@ -39,6 +39,8 @@ dependencies:
   file_picker: ^4.5.1
   flutter_native_api: ^0.0.1
   video_thumbnail: ^0.5.3
+  app_settings:
+  rename: ^2.0.1
   
  
   
@@ -51,7 +53,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.11.0"
+  change_app_package_name: ^1.1.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "Assets/images/whatsapp_logo.png"
+  min_sdk_android:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -71,8 +80,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - Assets/images/whatsapp_logo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

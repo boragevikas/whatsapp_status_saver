@@ -33,11 +33,13 @@ class StatusController extends GetxController {
         if (ext == ".mp4") {
           getVideos =
               items.where((element) => element.path.endsWith(".mp4")).toList();
+          refresh();
         } else {
           if (ext == ".jpg") {
             getImages = items
                 .where((element) => element.path.endsWith(".jpg"))
                 .toList();
+            refresh();
           }
         }
 

@@ -19,7 +19,8 @@ class _ImageTabState extends State<ImageTab> {
     return statusController.isWhatsappAvailable.value
         ? const Center(child: Text("whatsapp not found"))
         : (statusController.getImages.isEmpty)
-            ? const Center(child: Text("No images found"))
+            ? const Center(
+                child: Text("No images found / Slide to see videos >>>"))
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GridView(

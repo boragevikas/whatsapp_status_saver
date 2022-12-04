@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:status_saver/controller/binding/status_controller.dart';
 import 'package:status_saver/controller/theme_controller.dart';
 import 'package:status_saver/views/how_to_use.dart';
 
@@ -12,6 +13,7 @@ class _MyDrawerState extends State<MyDrawer> {
   final ThemeController themeController = Get.put(ThemeController());
 
   final ThemeController _themeController = Get.find();
+  final StatusController statusController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +23,36 @@ class _MyDrawerState extends State<MyDrawer> {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.green,
             ),
-            child: Text("Status saver for whatsapp"),
+            child: Column(
+              children: [
+                Container(
+                    width: 150,
+                    height: 100,
+                    // decoration: BoxDecoration(shape: BoxShape.circle),
+                    child: Image(
+                      image: AssetImage("Assets/images/whatsapp_logo.png"),
+                      fit: BoxFit.scaleDown,
+                    )),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Status saver for whatsapp",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.chat),
+            title: const Text('Switch To Whatsapp Bussiness'),
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             leading: Icon(
