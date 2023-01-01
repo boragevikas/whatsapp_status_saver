@@ -4,29 +4,30 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class MyWebview extends StatefulWidget {
-  const MyWebview({
-    Key? key,
-  }) : super(key: key);
+class MyWebview extends StatelessWidget {
+  final String? url;
+  final String? title;
 
-  @override
-  State<MyWebview> createState() => _MyWebviewState();
-}
-
-class _MyWebviewState extends State<MyWebview> {
-  Completer<WebViewController> _controller = Completer<WebViewController>();
-
+  MyWebview({Key? key, this.url, this.title}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Privacy Policy'),
+        centerTitle: true,
+        elevation: 0,
+        title: Text(
+          title ?? "Terms & Conditions ",
+          style: TextStyle(
+            fontFamily: 'MuseoSans',
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ),
-      body: WebView(
-        initialUrl: 'https://en.wikipedia.org/wiki/Kraken',
-        onWebViewCreated: (WebViewController webViewController) {
-          _controller.complete(webViewController);
-        },
+      body: Center(
+        child: WebView(
+          initialUrl: url ?? 'https://boragevikas.github.io/boragevikas/',
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:status_saver/controller/binding/status_controller.dart';
@@ -96,6 +97,30 @@ class _MyDrawerState extends State<MyDrawer> {
             title: const Text('Privacy Policy'),
             onTap: () {
               Get.to(MyWebview());
+              // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.add,
+            ),
+            title: const Text('Youtube'),
+            onTap: () {
+              Get.to(MyWebview(
+                url: "https://www.youtube.com/",
+              ));
+              // Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.g_mobiledata,
+            ),
+            title: const Text('google'),
+            onTap: () {
+              Get.to(MyWebview(
+                url: "https://www.google.com/",
+              ));
               // Navigator.pop(context);
             },
           ),
