@@ -41,7 +41,7 @@ dependencies:
   video_thumbnail: ^0.5.3
   app_settings:
   rename: ^2.0.1
-  
+  webview_flutter: ^3.0.4
  
   
 

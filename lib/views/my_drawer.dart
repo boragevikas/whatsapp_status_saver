@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:status_saver/controller/binding/status_controller.dart';
 import 'package:status_saver/controller/theme_controller.dart';
 import 'package:status_saver/views/how_to_use.dart';
+import 'package:status_saver/views/webview.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -94,7 +95,8 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
             title: const Text('Privacy Policy'),
             onTap: () {
-              Navigator.pop(context);
+              Get.to(MyWebview());
+              // Navigator.pop(context);
             },
           ),
         ],
