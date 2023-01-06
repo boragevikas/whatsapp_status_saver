@@ -91,23 +91,11 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            leading: Icon(
-              Icons.share_rounded,
-            ),
+            leading: Icon(Icons.lock_open),
             title: const Text('Privacy Policy'),
             onTap: () {
-              Get.to(MyWebview());
-              // Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              CupertinoIcons.add,
-            ),
-            title: const Text('Youtube'),
-            onTap: () {
               Get.to(MyWebview(
-                url: "https://www.youtube.com/",
+                url: "https://boragevikas.github.io/privacy_policy/",
               ));
               // Navigator.pop(context);
             },

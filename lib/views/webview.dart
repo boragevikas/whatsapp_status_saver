@@ -25,7 +25,8 @@ class MyWebview extends StatelessWidget {
       ),
       body: Center(
         child: WebView(
-          initialUrl: url ?? 'https://boragevikas.github.io/boragevikas/',
+          initialUrl: url ??
+              'https://boragevikas.github.io/boragevikas/', //https://www.freeprivacypolicy.com/live/b2b751a2-f178-4121-9fb3-8bab2991bfce
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),
