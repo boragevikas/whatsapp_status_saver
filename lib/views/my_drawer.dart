@@ -66,19 +66,20 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            leading: Switch(
-              value: isTrue,
-              onChanged: (value) {
-                setState(() {
-                  isTrue == value;
-                });
-              },
-              activeTrackColor: Colors.lightGreenAccent,
-              activeColor: Colors.green,
+            leading: Icon(
+              Icons.lightbulb,
+              color: Get.isDarkMode ? Colors.yellow : Colors.white,
             ),
-            title: const Text('Dark'),
+            title: Text(Get.isDarkMode ? 'Change To Dark' : "Change To light"),
             onTap: () {
-              Get.changeTheme(ThemeData.dark());
+              Get.isDarkMode
+                  ? Get.changeTheme(
+                      ThemeData(
+                        primarySwatch: Colors.green,
+                      ),
+                    )
+                  : Get.changeTheme(ThemeData.dark());
+              setState(() {});
             },
           ),
           ListTile(
