@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:status_saver/controller/binding/homeview_binding.dart';
-import 'package:status_saver/views/homeview.dart';
+// import 'package:status_saver/controller/binding/homeview_binding.dart';
+// import 'package:status_saver/views/homeview.dart';
 import 'package:status_saver/views/splash_screen.dart';
 
 Future<void> main() async {

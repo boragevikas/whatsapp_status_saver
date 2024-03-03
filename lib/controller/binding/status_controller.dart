@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:status_saver/constatnts/constatnts.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
@@ -11,12 +10,12 @@ class StatusController extends GetxController {
   List<FileSystemEntity> getImages = [];
   List<FileSystemEntity> getVideos = [];
   RxBool isWhatsappAvailable = false.obs;
-  RxBool _isFetch = false.obs;
+  // RxBool _isFetch = false.obs;
 
   void getStatus(String ext) async {
     final status = await Permission.storage.request();
 
-    Directory? directory = await getExternalStorageDirectory();
+    // Directory? directory = await getExternalStorageDirectory();
 
     if (status.isDenied) {
       Permission.storage.request();

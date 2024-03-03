@@ -14,12 +14,12 @@ class MyDrawer extends StatefulWidget {
 class _MyDrawerState extends State<MyDrawer> {
   final ThemeController themeController = Get.put(ThemeController());
 
-  final ThemeController _themeController = Get.find();
+  // final ThemeController _themeController = Get.find();
   final StatusController statusController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    bool isTrue = false;
+    // bool isTrue = false;
     return Drawer(
       child: ListView(
         // Important: Remove any padding from the ListView.
